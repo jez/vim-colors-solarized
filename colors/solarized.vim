@@ -788,6 +788,11 @@ hi! link gitcommitUnmergedArrow  gitcommitUnmergedFile
 "exe "hi! gitcommitOverflow"
 "exe "hi! gitcommitBlank"
 " }}}
+" git-gutter highlighting "{{{
+exe "hi! gitgutterAdd"      .s:fmt_none   .s:fg_green  .s:bg_base02
+exe "hi! gitgutterChange"   .s:fmt_none   .s:fg_yellow .s:bg_base02
+exe "hi! gitgutterDelete"   .s:fmt_none   .s:fg_red    .s:bg_base02
+" }}}
 " html highlighting "{{{
 " ---------------------------------------------------------------------
 exe "hi! htmlTag"           .s:fmt_none .s:fg_base01 .s:bg_none

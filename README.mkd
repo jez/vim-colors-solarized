@@ -17,6 +17,7 @@ Patched by Jacob Zimmerman <jake@zimmerman.io>. Patched features:
 
 - 24-bit color support, i.e., for when using `'set termguicolors'`
 - Diff lines preserve their foreground colors, and use tinted background colors
+- Custom highlight groups for vim-gitgutter (makes GUI & terminal colors equal) 
 
 Visit the [Solarized homepage]
 ------------------------------
