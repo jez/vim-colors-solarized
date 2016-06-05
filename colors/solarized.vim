@@ -280,6 +280,28 @@ else
     let s:gui_green       = "#5f8700"
 endif
 
+" These are tinted versions of the solarized base colors,
+" useful for the background of the DiffAdd, etc. groups.
+"let s:gui_base03_g = "#11392f"
+"let s:gui_base03_y = "#243d2b"
+"let s:gui_base03_r = "#252c35"
+"let s:gui_base03_b = "#043649"
+"
+"let s:gui_base3_g  = "#edeac6"
+"let s:gui_base3_y  = "#efe0b6"
+"let s:gui_base3_r  = "#f8d5c5"
+"let s:gui_base3_b  = "#e3e9e1"
+
+let s:gui_base03_g = "#143c2e"
+let s:gui_base03_y = "#2d4229"
+let s:gui_base03_r = "#2c2c34"
+let s:gui_base03_b = "#073e55"
+
+let s:gui_base3_g  = "#ebe8c1"
+let s:gui_base3_y  = "#ecdbab"
+let s:gui_base3_r  = "#f7cfbf"
+let s:gui_base3_b  = "#d2e1e0"
+
 if g:solarized_termcolors != 256 && &t_Co >= 16
     let s:term_base03      = "8"
     let s:term_base02      = "0"
@@ -373,6 +395,19 @@ if &background == "light"
     if s:gui_back != "NONE"
         let s:gui_back     = s:gui_base03
     endif
+
+    let s:gui_temp03_g     = s:gui_base03_g
+    let s:gui_temp03_y     = s:gui_base03_y
+    let s:gui_temp03_r     = s:gui_base03_r
+    let s:gui_temp03_b     = s:gui_base03_b
+    let s:gui_base03_g     = s:gui_base3_g
+    let s:gui_base03_y     = s:gui_base3_y
+    let s:gui_base03_r     = s:gui_base3_r
+    let s:gui_base03_b     = s:gui_base3_b
+    let s:gui_base3_g      = s:gui_temp03_g
+    let s:gui_base3_y      = s:gui_temp03_y
+    let s:gui_base3_r      = s:gui_temp03_r
+    let s:gui_base3_b      = s:gui_temp03_b
 
     let s:term_temp03      = s:term_base03
     let s:term_temp02      = s:term_base02
@@ -514,6 +549,18 @@ exe "let s:sp_violet    = ' guisp=".s:gui_violet ."'"
 exe "let s:sp_blue      = ' guisp=".s:gui_blue   ."'"
 exe "let s:sp_cyan      = ' guisp=".s:gui_cyan   ."'"
 
+" These use tinted versions of the solarized base colors to set
+" a background tint relative to certain bases. Only for gui.
+exe "let s:bg_base03_g  = ' guibg=".s:gui_base03_g ." ctermbg=".s:term_base03 ."'"
+exe "let s:bg_base03_y  = ' guibg=".s:gui_base03_y ." ctermbg=".s:term_base03 ."'"
+exe "let s:bg_base03_r  = ' guibg=".s:gui_base03_r ." ctermbg=".s:term_base03 ."'"
+exe "let s:bg_base03_b  = ' guibg=".s:gui_base03_b ." ctermbg=".s:term_base03 ."'"
+
+exe "let s:bg_base3_g   = ' guibg=".s:gui_base3_g  ." ctermbg=".s:term_base3  ."'"
+exe "let s:bg_base3_y   = ' guibg=".s:gui_base3_y  ." ctermbg=".s:term_base3  ."'"
+exe "let s:bg_base3_r   = ' guibg=".s:gui_base3_r  ." ctermbg=".s:term_base3  ."'"
+exe "let s:bg_base3_b   = ' guibg=".s:gui_base3_b  ." ctermbg=".s:term_base3  ."'"
+
 "}}}
 " Basic highlighting"{{{
 " ---------------------------------------------------------------------
@@ -626,11 +673,11 @@ exe "hi! DiffChange"     .s:fmt_undr   .s:fg_yellow .s:bg_none   .s:sp_yellow
 exe "hi! DiffDelete"     .s:fmt_bold   .s:fg_red    .s:bg_none
 exe "hi! DiffText"       .s:fmt_undr   .s:fg_blue   .s:bg_none   .s:sp_blue
 else " normal
-  if has("gui_running") || (exists('termguicolors') && &tgc)
-exe "hi! DiffAdd"        .s:fmt_bold   .s:fg_green  .s:bg_base02 .s:sp_green
-exe "hi! DiffChange"     .s:fmt_bold   .s:fg_yellow .s:bg_base02 .s:sp_yellow
-exe "hi! DiffDelete"     .s:fmt_bold   .s:fg_red    .s:bg_base02
-exe "hi! DiffText"       .s:fmt_bold   .s:fg_blue   .s:bg_base02 .s:sp_blue
+  if has("gui_running") || (exists('+termguicolors') && &tgc)
+exe "hi! DiffAdd"        .s:fmt_bold   .s:fg_none   .s:bg_base03_g .s:sp_green
+exe "hi! DiffChange"     .s:fmt_bold   .s:fg_none   .s:bg_base03_y .s:sp_yellow
+exe "hi! DiffDelete"     .s:fmt_bold   .s:fg_none   .s:bg_base03_r
+exe "hi! DiffText"       .s:fmt_bold   .s:fg_none   .s:bg_base03_b .s:sp_blue
     else
 exe "hi! DiffAdd"        .s:fmt_none   .s:fg_green  .s:bg_base02 .s:sp_green
 exe "hi! DiffChange"     .s:fmt_none   .s:fg_yellow .s:bg_base02 .s:sp_yellow
