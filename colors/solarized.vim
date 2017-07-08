@@ -1048,6 +1048,34 @@ augroup SolarizedHiTrail
     endif
 augroup END
 " }}}
+" Neovim Terminal Emulator {{{
+" Neovim embeds a terminal emulator. Since it "could" run independently of a
+" host terminal emulator, it behaves as such. Thus, we need to define the
+" color scheme here just like we would in iTerm2 or xterm etc.
+
+let g:terminal_color_0 = s:gui_base02
+let g:terminal_color_1 = s:gui_red
+let g:terminal_color_2 = "#859900"
+let g:terminal_color_3 = s:gui_yellow
+let g:terminal_color_4 = s:gui_blue
+let g:terminal_color_5 = s:gui_magenta
+let g:terminal_color_6 = s:gui_cyan
+let g:terminal_color_7 = s:gui_base2
+let g:terminal_color_8 = s:gui_base01
+let g:terminal_color_9 = s:gui_orange
+let g:terminal_color_10 = s:gui_base01
+let g:terminal_color_11 = s:gui_base00
+let g:terminal_color_12 = s:gui_base0
+let g:terminal_color_13 = s:gui_violet
+let g:terminal_color_14 = s:gui_base1
+let g:terminal_color_15 = s:gui_base3
+
+if &background == "light"
+  let g:terminal_color_8 = s:gui_base03
+  let g:terminal_color_15 = s:gui_base1
+endif
+
+" }}}
 " Menus "{{{
 " ---------------------------------------------------------------------
 " Turn off Solarized menu by including the following assignment in your .vimrc:
