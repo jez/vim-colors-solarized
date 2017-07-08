@@ -982,7 +982,10 @@ exe "hi! pandocCitationRef"              .s:fg_magenta.s:bg_none   .s:fmt_none
 exe "hi! pandocStyleDelim"               .s:fg_base01 .s:bg_none  .s:fmt_none
 exe "hi! pandocEmphasis"                 .s:fg_base0  .s:bg_none  .s:fmt_ital
 exe "hi! pandocEmphasisNested"           .s:fg_base0  .s:bg_none  .s:fmt_bldi
-exe "hi! pandocStrongEmphasis"           .s:fg_base0  .s:bg_none  .s:fmt_bold
+exe "hi! pandocStrong"                   .s:fg_orange .s:bg_none  .s:fmt_bold
+exe "hi! pandocStrongEmphasis"           .s:fg_orange .s:bg_none  .s:fmt_bldi
+exe "hi! pandocStrongInEmphasis"         .s:fg_orange .s:bg_none  .s:fmt_bldi
+exe "hi! pandocEmphasisInStrong"         .s:fg_orange .s:bg_none  .s:fmt_bldi
 exe "hi! pandocStrongEmphasisNested"     .s:fg_base0  .s:bg_none  .s:fmt_bldi
 exe "hi! pandocStrongEmphasisEmphasis"   .s:fg_base0  .s:bg_none  .s:fmt_bldi
 exe "hi! pandocStrikeout"                .s:fg_base01 .s:bg_none  .s:fmt_revr
