@@ -790,6 +790,7 @@ exe "hi! gitcommitFile"         .s:fmt_bold     .s:fg_base0     .s:bg_none
 hi! link gitcommitDiscardedArrow gitcommitDiscardedFile
 hi! link gitcommitSelectedArrow  gitcommitSelectedFile
 hi! link gitcommitUnmergedArrow  gitcommitUnmergedFile
+hi! link gitcommitOverflow       Error
 "exe "hi! gitcommitArrow"
 "exe "hi! gitcommitOverflow"
 "exe "hi! gitcommitBlank"
