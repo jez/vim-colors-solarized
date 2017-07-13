@@ -735,6 +735,10 @@ exe "hi! vimHiLink"         .s:fmt_none    .s:fg_blue   .s:bg_none
 exe "hi! vimHiGroup"        .s:fmt_none    .s:fg_blue   .s:bg_none
 exe "hi! vimGroup"          .s:fmt_undb    .s:fg_blue   .s:bg_none
 "}}}
+" vim helpfile highlighting "{{{
+hi! link helpCommand Constant
+hi! link helpExample Constant
+" }}}
 " diff highlighting "{{{
 " ---------------------------------------------------------------------
 hi! link diffAdded Statement
