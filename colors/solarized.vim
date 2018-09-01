@@ -645,7 +645,7 @@ exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base00 .s:bg_base02 .s:fmt_revbb
 exe "hi! Visual"         .s:fmt_none   .s:fg_base01 .s:bg_base03 .s:fmt_revbb
 exe "hi! Directory"      .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! ErrorMsg"       .s:fmt_revr   .s:fg_red    .s:bg_none
-exe "hi! IncSearch"      .s:fmt_stnd   .s:fg_orange .s:bg_none
+exe "hi! IncSearch"      .s:fmt_revr   .s:fg_orange .s:bg_none
 exe "hi! Substutite"     .s:fmt_stnd   .s:fg_orange .s:bg_none
 exe "hi! Search"         .s:fmt_revr   .s:fg_yellow .s:bg_none
 exe "hi! MoreMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
@@ -825,6 +825,22 @@ exe "hi! texMathZoneX"   . s:fg_yellow .s:bg_back   .s:fmt_none
 exe "hi! texMathMatcher" . s:fg_yellow .s:bg_back   .s:fmt_none
 exe "hi! texMathMatcher" . s:fg_yellow .s:bg_back   .s:fmt_none
 exe "hi! texRefLabel"    . s:fg_yellow .s:bg_back   .s:fmt_none
+"}}}
+" json highlighting "{{{
+" ---------------------------------------------------------------------
+exe "hi! jsonNumber"            .s:fmt_none     .s:fg_violet    .s:bg_none
+exe "hi! jsonNull"              .s:fmt_none     .s:fg_blue      .s:bg_none
+exe "hi! jsonBoolean"           .s:fmt_none     .s:fg_yellow    .s:bg_none
+
+exe "hi! jsonNumError"          .s:fmt_revr     .s:fg_red       .s:bg_none
+exe "hi! jsonCommentError"      .s:fmt_revr     .s:fg_red       .s:bg_none
+exe "hi! jsonSemicolonError"    .s:fmt_revr     .s:fg_red       .s:bg_none
+exe "hi! jsonTrailingCommaError".s:fmt_revr     .s:fg_red       .s:bg_none
+exe "hi! jsonMissingCommaError" .s:fmt_revr     .s:fg_red       .s:bg_none
+exe "hi! jsonStringSQError"     .s:fmt_revr     .s:fg_red       .s:bg_none
+exe "hi! jsonNoQuotesError"     .s:fmt_revr     .s:fg_red       .s:bg_none
+exe "hi! jsonTripleQuotesError" .s:fmt_revr     .s:fg_red       .s:bg_none
+
 "}}}
 " ruby highlighting "{{{
 " ---------------------------------------------------------------------
