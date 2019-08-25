@@ -621,6 +621,7 @@ exe "hi! Ignore"         .s:fmt_none   .s:fg_none   .s:bg_none
 "       *Ignore          left blank, hidden  |hl-Ignore|
 
 exe "hi! Error"          .s:fmt_bold   .s:fg_red    .s:bg_none
+exe "hi! ALEErrorSign"       .s:fmt_bold   .s:fg_red
 "       *Error           any erroneous construct
 
 exe "hi! Todo"           .s:fmt_bold   .s:fg_magenta.s:bg_none
@@ -800,6 +801,10 @@ hi! link gitcommitOverflow       Error
 exe "hi! gitgutterAdd"      .s:fmt_none   .s:fg_green  .s:bg_base02
 exe "hi! gitgutterChange"   .s:fmt_none   .s:fg_yellow .s:bg_base02
 exe "hi! gitgutterDelete"   .s:fmt_none   .s:fg_red    .s:bg_base02
+" }}}
+" w0rp/ale signs "{{{
+exe "hi! ALEErrorSign"      .s:fmt_none   .s:fg_red    .s:bg_base02
+exe "hi! ALEWarningSign"    .s:fmt_none   .s:fg_magenta.s:bg_base02
 " }}}
 " html highlighting "{{{
 " ---------------------------------------------------------------------
