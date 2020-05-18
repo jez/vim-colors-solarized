@@ -804,7 +804,8 @@ exe "hi! gitgutterDelete"   .s:fmt_none   .s:fg_red    .s:bg_base02
 " }}}
 " LanguageClient-neovim highlighting "{{{
 exe "hi! LCHighlightedError".s:fmt_none   .s:fg_red    .s:bg_base02
-exe "hi! LCHighlightedWarn" .s:fmt_none   .s:fg_violet .s:bg_base02
+exe "hi! LCHighlightedWarn" .s:fmt_none   .s:fg_magenta.s:bg_base02
+exe "hi! LCHighlightedInfo" .s:fmt_none   .s:fg_violet .s:bg_base02
 " }}}
 " w0rp/ale signs "{{{
 exe "hi! ALEErrorSign"      .s:fmt_none   .s:fg_red    .s:bg_base02
