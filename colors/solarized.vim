@@ -854,7 +854,7 @@ exe "hi! jsonTripleQuotesError" .s:fmt_revr     .s:fg_red       .s:bg_none
 "}}}
 " ruby highlighting "{{{
 " ---------------------------------------------------------------------
-exe "hi! rubyDefine"     . s:fg_base1  .s:bg_back   .s:fmt_bold
+exe "hi! rubyDefine"     . s:fg_base1  .s:bg_none   .s:fmt_bold
 "rubyInclude
 "rubySharpBang
 "rubyAccess
