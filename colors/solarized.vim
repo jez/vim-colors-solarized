@@ -708,6 +708,7 @@ exe "hi! ColorColumn"    .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! Cursor"         .s:fmt_none   .s:fg_base03 .s:bg_base0
 hi! link lCursor Cursor
 exe "hi! MatchParen"     .s:fmt_bold   .s:fg_red    .s:bg_base02
+exe "hi! NormalFloat"    .s:fmt_uopt   .s:fg_none   .s:bg_base02  .s:sp_base1
 
 "}}}
 " vim syntax highlighting "{{{
@@ -843,7 +844,7 @@ exe "hi! jsonNull"              .s:fmt_none     .s:fg_blue      .s:bg_none
 exe "hi! jsonBoolean"           .s:fmt_none     .s:fg_yellow    .s:bg_none
 
 exe "hi! jsonNumError"          .s:fmt_revr     .s:fg_red       .s:bg_none
-exe "hi! jsonCommentError"      .s:fmt_revr     .s:fg_red       .s:bg_none
+exe "hi! jsonCommentError"      .s:fmt_ital     .s:fg_base01    .s:bg_none
 exe "hi! jsonSemicolonError"    .s:fmt_revr     .s:fg_red       .s:bg_none
 exe "hi! jsonTrailingCommaError".s:fmt_revr     .s:fg_red       .s:bg_none
 exe "hi! jsonMissingCommaError" .s:fmt_revr     .s:fg_red       .s:bg_none
