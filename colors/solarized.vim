@@ -767,9 +767,16 @@ exe "hi! vimGroup"          .s:fmt_undb    .s:fg_blue   .s:bg_none
 hi! link helpCommand Constant
 hi! link helpExample Constant
 " }}}
-" diff highlighting "{{{
+" diff.vim highlighting "{{{
 " ---------------------------------------------------------------------
-hi! link diffAdded Statement
+hi! link Added Statement
+hi! link Removed Special
+hi! link Changed PreProc
+
+hi! link diffAdded Added
+hi! link diffRemoved Removed
+hi! link diffChanged Changed
+
 hi! link diffLine Identifier
 "}}}
 " git & gitcommit highlighting "{{{
@@ -1249,9 +1256,6 @@ autocmd ColorScheme * if g:colors_name != "solarized" | silent! aunmenu Solarize
 hi! link FloatBoarder WinSeparator
 
 " Don't use Nvim colors in any groups, use theme colors
-hi! link Added DiffAdd
-hi! link Removed DiffDelete
-hi! link Changed DiffChange
 hi! DiagnosticDeprecated cterm=strikethrough gui=strikethrough guisp=Red
 hi! DiagnosticError ctermfg=1 guifg=Red
 hi! DiagnosticHint ctermfg=7 guifg=LightGrey
