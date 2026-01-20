@@ -134,28 +134,6 @@
 " Allow or disallow certain features based on current terminal emulator or
 " environment.
 
-" Terminals that support italics
-let s:terms_italic=[
-            \"rxvt",
-            \"gnome-terminal"
-            \]
-" For reference only, terminals are known to be incomptible.
-" Terminals that are in neither list need to be tested.
-let s:terms_noitalic=[
-            \"iTerm.app",
-            \"Apple_Terminal"
-            \]
-if has("gui_running")
-    let s:terminal_italic=1 " TODO: could refactor to not require this at all
-else
-    let s:terminal_italic=0 " terminals will be guilty until proven compatible
-    for term in s:terms_italic
-        if $TERM_PROGRAM =~ term
-            let s:terminal_italic=1
-        endif
-    endfor
-endif
-
 " }}}
 " Default option values"{{{
 " ---------------------------------------------------------------------
@@ -465,11 +443,7 @@ else
     let s:u           = ",underline"
 endif
 
-if g:solarized_italic == 0 || s:terminal_italic == 0
-    let s:i           = ""
-else
-    let s:i           = ",italic"
-endif
+let s:i           = ",italic"
 "}}}
 " Highlighting primitives"{{{
 " ---------------------------------------------------------------------
@@ -517,7 +491,7 @@ exe "let s:fmt_bold     = ' gui=NONE".s:b.      " term=NONE".s:b."'"
 exe "let s:fmt_bldi     = ' gui=NONE".s:b.      " term=NONE".s:b."'"
 exe "let s:fmt_undr     = ' gui=NONE".s:u.      " term=NONE".s:u."'"
 exe "let s:fmt_undb     = ' gui=NONE".s:u.s:b.  " term=NONE".s:u.s:b."'"
-exe "let s:fmt_undi     = ' gui=NONE".s:u.      " term=NONE".s:u."'"
+exe "let s:fmt_undi     = ' gui=NONE".s:u.s:i   " term=NONE".s:u.s:i"'"
 exe "let s:fmt_uopt     = ' gui=NONE".s:ou.     " term=NONE".s:ou."'"
 exe "let s:fmt_curl     = ' gui=NONE".s:c.      " term=NONE".s:c."'"
 exe "let s:fmt_ital     = ' gui=NONE".s:i.      " term=NONE".s:i."'"
@@ -569,7 +543,7 @@ exe "let s:bg_base3_b   = ' guibg=".s:gui_base3_b  ." ctermbg=".s:term_base3  ."
 
 exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
 
-exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
+exe "hi! Comment"        .s:fmt_none   .s:fg_base01 .s:bg_none
 "       *Comment         any comment
 
 exe "hi! Constant"       .s:fmt_none   .s:fg_cyan   .s:bg_none
@@ -1202,8 +1176,6 @@ function! SolarizedMenu()
 
         if g:solarized_bold==0 | let l:boldswitch="On" | else | let l:boldswitch="Off" | endif
         exe "amenu &Solarized.&Styling.&Turn\\ Bold\\ ".l:boldswitch." :let g:solarized_bold=(abs(g:solarized_bold-1)) \\| colorscheme solarized<CR>"
-        if g:solarized_italic==0 | let l:italicswitch="On" | else | let l:italicswitch="Off" | endif
-        exe "amenu &Solarized.&Styling.&Turn\\ Italic\\ ".l:italicswitch." :let g:solarized_italic=(abs(g:solarized_italic-1)) \\| colorscheme solarized<CR>"
         if g:solarized_underline==0 | let l:underlineswitch="On" | else | let l:underlineswitch="Off" | endif
         exe "amenu &Solarized.&Styling.&Turn\\ Underline\\ ".l:underlineswitch." :let g:solarized_underline=(abs(g:solarized_underline-1)) \\| colorscheme solarized<CR>"
 
