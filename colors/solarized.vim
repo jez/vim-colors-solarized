@@ -1240,19 +1240,33 @@ hi! link FloatBoarder WinSeparator
 
 " Don't use Nvim colors in any groups, use theme colors
 hi! DiagnosticDeprecated cterm=strikethrough gui=strikethrough guisp=Red
-hi! DiagnosticError ctermfg=1 guifg=Red
 hi! DiagnosticHint ctermfg=7 guifg=LightGrey
-hi! DiagnosticInfo ctermfg=4 guifg=LightBlue
 hi! DiagnosticOk   ctermfg=10 guifg=LightGreen
-hi! DiagnosticUnderlineError cterm=underline gui=underline guisp=Red
-hi! DiagnosticUnderlineHint cterm=underline gui=underline guisp=LightGrey
-hi! DiagnosticUnderlineInfo cterm=underline gui=underline guisp=LightBlue
-hi! DiagnosticUnderlineOk cterm=underline gui=underline guisp=LightGreen
-hi! DiagnosticUnderlineWarn cterm=underline gui=underline guisp=Orange
-hi! DiagnosticWarn ctermfg=3 guifg=Orange
+
+hi! link DiagnosticFloatingError NormalFloat
+hi! link DiagnosticFloatingWarn  NormalFloat
+hi! link DiagnosticFloatingInfo  NormalFloat
+hi! link DiagnosticFloatingHint  NormalFloat
+
+exe "hi! DiagnosticError"          .s:fmt_none   .s:fg_red    .s:bg_base02
+exe "hi! DiagnosticWarn"           .s:fmt_none   .s:fg_magenta.s:bg_base02
+exe "hi! DiagnosticInfo"           .s:fmt_none   .s:fg_violet .s:bg_base02
+
+exe "hi! DiagnosticUnderlineError" .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_red
+exe "hi! DiagnosticUnderlineWarn"  .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_orange
+exe "hi! DiagnosticUnderlineInfo"  .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_violet
+exe "hi! DiagnosticUnderlineHint"  .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_violet
+exe "hi! DiagnosticUnderlineOk"    .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_green
+
+" TODO(jez) Audit all the treesitter markdown highlight groups and make them
+" map to whatever pandoc would have linked them to
+hi! link @markup.raw.markdown_inline Constant
+hi! link @markup.raw.block.markdown Constant
+
 
 " vim:foldmethod=marker:foldlevel=0
 "}}}
 
+exe "hi! LspInlayHint"     .s:fmt_uopt   .s:fg_none   .s:bg_base02  .s:sp_base1
 
 
